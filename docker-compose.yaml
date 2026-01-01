@@ -1,0 +1,17 @@
+services:
+  api:
+    image: srp-api
+    build:
+      context: .
+      dockerfile: src/SRP.API/Dockerfile
+    ports:
+      - "8080:80"
+    env_file:
+      - .env
+  web:
+    image: srp-web
+    build:
+      context: .
+      dockerfile: src/SRP.Web/Dockerfile
+    ports:
+      - "80:80"
